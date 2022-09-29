@@ -1,0 +1,144 @@
+<div class="top">
+  
+  <div class="sect2">
+    <div style="border-radius: 5px;background-color: lightgrey;width: 45px;height: 45px;margin-top: -0.8%;"></div>
+    <h1 style="color: white;" [ngClass]="head[0] ? 'new':'old'" (click)="press($event,'Medical Darpan')">Medical Darpan</h1>
+    <h1 style="color: white;" [ngClass]="head[1] ? 'new':'old'" (click)="press($event,'Home')">Home</h1>
+    <h1 style="color: white;" [ngClass]="head[2] ? 'new':'old'" (click)="press($event,'Products')">Products</h1>
+    <h1 style="color: white;" [ngClass]="head[3] ? 'new':'old'" (click)="press($event,'Distributors')">Distributors</h1>
+    <h1 style="color: white;" [ngClass]="head[4] ? 'new':'old'" (click)="press($event,'Manufactures')">Manufactures</h1>
+    <h1 style="color: white;" [ngClass]="head[5] ? 'new':'old'" (click)="press($event,'About Us')">About Us</h1>
+    <h1 style="color: white;" [ngClass]="head[6] ? 'new':'old'" (click)="press($event,'Blog')">Blog</h1>
+    
+  </div>
+  <div class="sect3">
+    <h1 style="color: white;margin-left: 80%;">Login</h1>
+    <button mat-raised-button style="background:transparent ;"><mat-icon style="margin-top: -25%;">account_circle</mat-icon></button>
+  </div>
+  
+  
+  
+  
+</div>
+<div style="margin-top: 0.5%;margin-bottom: 0.5%;">
+  <span >{{content}}</span>
+</div>
+
+<div class="search">
+  <img src="../assets/search.png" alt="">
+  <input type="text" style="border: none;width: 100%;background: transparent;font-size: 2em;" (change)="searchInput($event)" matInput placeholder="">
+  <button mat-button (click)="search()" style="background-color: rgb(10, 173, 156);color:white ;width: 150px;border-radius: 0px;">Search</button>
+</div>
+
+<div style="display:flex ;flex-direction: row;">
+  <h2 class="txt">{{medicine}}</h2>
+  <button *ngFor="let b of medArray" (click)="remove(b)" mat-raised-button style="background-color: rgb(10, 173, 156);color:white ;width:max-content;border-radius: 3px;margin-top: 1%;margin-left: 0.8%;margin-bottom: 1%;"><span style="display: flex;justify-content: space-between;">{{b}} <span style="margin-right: -5%">x</span></span></button>
+</div>
+
+<div class="main">
+  <div class="side">
+    <div class="box mat-elevation-z1">
+      <h2 style="background-color: lightgray;text-align: center;padding: 2%;">Related Gallery</h2>
+      <a mat-button [ngClass]="check[0] ? 'green' : 'white' " (click)="textchange($event,'Paracetamol Tablets',0)">
+        <span style="margin-left: 0.2%;padding:3px;width: 98%;display: flex;justify-content: space-between;">Paracetamol Tablets <span style="font-size: larger;color: white;">x</span></span>
+      </a>
+      <a mat-button [ngClass]="check[1] ? 'green' : 'white' " (click)="textchange($event,'Paracetamol Syrup',1)" style="padding: 1%;text-align:start;">
+        <span style="margin-left: 0.2%;padding:3px;width: 98%;display: flex;justify-content: space-between;">Paracetamol Syrup <span style="font-size: larger;color: white;">x</span></span>
+      </a>
+      <a mat-button [ngClass]="check[2] ? 'green' : 'white' " (click)="textchange($event,'Paracetamol Powder',2)" style="padding: 1%;text-align:start;">
+        <span style="margin-left: 0.2%;padding:3px;width: 98%;display: flex;justify-content: space-between;">Paracetamol Powder <span style="font-size: larger;color: white;">x</span></span>
+      </a>
+      <a mat-button [ngClass]="check[3] ? 'green' : 'white' " (click)="textchange($event,'Aceclofenac',3)" style="padding: 1%;text-align:start;">
+        <span style="margin-left: 0.2%;padding:3px;width: 98%;display: flex;justify-content: space-between;">Aceclofenac <span style="font-size: larger;color: white;">x</span></span>
+      </a>
+      <a mat-button [ngClass]="check[4] ? 'green' : 'white' " (click)="textchange($event,'Magaladrate Simethicone Oral Suspension',4)" style="padding: 1%;text-align:start;">
+        <span class="long" style="margin-left: 0.2%;padding:3px;width: 98%;display: flex;justify-content: space-between;">Magaladrate Simethicone Oral Suspension <span style="font-size: larger;color: white;">x</span></span>
+      </a>
+      <a mat-button [ngClass]="check[5] ? 'green' : 'white' " (click)="textchange($event,'Mefanamic Paracetamol Syrup',5)" style="padding: 1%;text-align:start;">
+        <span class="long" style="margin-left: 0.2%;padding:3px;width: 98%;display: flex;justify-content: space-between;">Mefanamic Paracetamol Syrup <span style="font-size: larger;color: white;">x</span></span>
+      </a>
+    </div>
+    <div class="box mat-elevation-z1" style="margin-top: 10%;">
+      <h2 style="background-color: lightgray;text-align: center;padding: 2%;">Related Brands</h2>
+      <a mat-button [ngClass]="check[6] ? 'green' : 'white' " (click)="textchange($event,'Cipmol Paracetamol',6)" style="padding: 1%;text-align:start;">
+        <span style="margin-left: 0.2%;padding:3px;width: 98%;display: flex;justify-content: space-between;">Cipmol Paracetamol <span style="font-size: larger;color: white;">x</span></span>
+      </a>
+      <a mat-button [ngClass]="check[7] ? 'green' : 'white' " (click)="textchange($event,'Pandal Paracetamol Tablets',7)" style="padding: 1%;text-align:start;">
+        <span style="margin-left: 0.2%;padding:3px;width: 98%;display: flex;justify-content: space-between;">Pandal Paracetamol Tablets <span style="font-size: larger;color: white;">x</span></span>
+      </a>
+      <a mat-button [ngClass]="check[8] ? 'green' : 'white' " (click)="textchange($event,'Combiflam',8)" style="padding: 1%;text-align:start;">
+        <span style="margin-left: 0.2%;padding:3px;width: 98%;display: flex;justify-content: space-between;">Combiflam <span style="font-size: larger;color: white;">x</span></span>
+      </a>
+      <a mat-button [ngClass]="check[9] ? 'green' : 'white' " (click)="textchange($event,'Crocin Tablets',9)" style="padding: 1%;text-align:start;">
+        <span style="margin-left: 0.2%;padding:3px;width: 98%;display: flex;justify-content: space-between;">Crocin Tablets <span style="font-size: larger;color: white;">x</span></span>
+      </a>
+      <a mat-button [ngClass]="check[10] ? 'green' : 'white' " (click)="textchange($event,'Calpol Paracetamol Tablets',10)" style="padding: 1%;text-align:start;">
+        <span class="long" style="margin-left: 0.2%;padding:3px;width: 98%;display: flex;justify-content: space-between;">Calpol Paracetamol Tablets <span style="font-size: larger;color: white;">x</span></span>
+      </a>
+      <a mat-button [ngClass]="check[11] ? 'green' : 'white' " (click)="textchange($event,'Sumo Tablet',11)" style="padding: 1%;text-align:start;">
+        <span class="long" style="margin-left: 0.2%;padding:3px;width: 98%;display: flex;justify-content: space-between;">Sumo Tablet <span style="font-size: larger;color: white;">x</span></span>
+      </a>
+    </div>
+    <div class="box1 mat-elevation-z1">
+      <h2 style="background-color: lightgray;text-align: center;padding: 2%;">Business Type</h2>
+      <a mat-button [ngClass]="check[12] ? 'green' : 'white' " (click)="textchange($event,'WholeSaler',12)" style="padding: 1%;text-align:start;">
+        <span style="margin-left: 0.2%;padding:3px;width: 98%;display: flex;justify-content: space-between;">WholeSaler <span style="font-size: larger;color: white;">x</span></span>
+      </a>
+      <a mat-button [ngClass]="check[13] ? 'green' : 'white' " (click)="textchange($event,'Manufacturer',13)" style="padding: 1%;text-align:start;">
+        <span style="margin-left: 0.2%;padding:3px;width: 98%;display: flex;justify-content: space-between;">Manufacturer <span style="font-size: larger;color: white;">x</span></span>
+      </a>
+      <a mat-button [ngClass]="check[14] ? 'green' : 'white' " (click)="textchange($event,'Retailer',14)" style="padding: 1%;text-align:start;">
+        <span style="margin-left: 0.2%;padding:3px;width: 98%;display: flex;justify-content: space-between;">Retailer <span style="font-size: larger;color: white;">x</span></span>
+      </a>
+      <a mat-button [ngClass]="check[15] ? 'green' : 'white' " (click)="textchange($event,'Exporter',15)" style="padding: 1%;text-align:start;">
+        <span style="margin-left: 0.2%;padding:3px;width: 98%;display: flex;justify-content: space-between;">Exporter <span style="font-size: larger;color: white;">x</span></span>
+      </a>
+      
+    </div>
+    <div class="box2 mat-elevation-z1">
+      <h2 style="background-color: lightgray;text-align: center;padding: 2%;">Strength</h2>
+      <a mat-button [ngClass]="check[16] ? 'green' : 'white' " (click)="textchange($event,'500mg',16)" style="padding: 1%;text-align:start;">
+        <span style="margin-left: 0.2%;padding:3px;width: 98%;display: flex;justify-content: space-between;">500mg <span style="font-size: larger;color: white;">x</span></span>
+      </a>
+      <a mat-button [ngClass]="check[17] ? 'green' : 'white' " (click)="textchange($event,'650mg',17)" style="padding: 1%;text-align:start;">
+        <span style="margin-left: 0.2%;padding:3px;width: 98%;display: flex;justify-content: space-between;">650mg <span style="font-size: larger;color: white;">x</span></span>
+      </a>
+      
+    </div>
+    <div class="box2 mat-elevation-z1">
+      <h2 style="background-color: lightgray;text-align: center;padding: 2%;">Manufacturer</h2>
+      <a mat-button [ngClass]="check[18] ? 'green' : 'white' " (click)="textchange($event,'Intas Pharmaceutical ltd',18)" style="padding: 1%;text-align:start;">
+        <span style="margin-left: 0.2%;padding:3px;width: 98%;display: flex;justify-content: space-between;">Intas Pharmaceutical ltd <span style="font-size: larger;color: white;">x</span></span>
+      </a>
+      <a mat-button [ngClass]="check[19] ? 'green' : 'white' " (click)="textchange($event,'Alkem Laboratories ltd',19)" style="padding: 1%;text-align:start;">
+        <span style="margin-left: 0.2%;padding:3px;width: 98%;display: flex;justify-content: space-between;">Alkem Laboratories ltd <span style="font-size: larger;color: white;">x</span></span>
+      </a>
+      
+    </div>
+    <div class="box2 mat-elevation-z1">
+      <h2 style="background-color: lightgray;text-align: center;padding: 2%;">Prescription/Non-Prescription</h2>
+      <a mat-button [ngClass]="check[20] ? 'green' : 'white' " (click)="textchange($event,'Intas Pharmaceutical ltd',20)" style="padding: 1%;text-align:start;">
+        <span style="margin-left: 0.2%;padding:3px;width: 98%;display: flex;justify-content: space-between;">Intas Pharmaceutical ltd <span style="font-size: larger;color: white;">x</span></span>
+      </a>
+      <a mat-button [ngClass]="check[21] ? 'green' : 'white' " (click)="textchange($event,'Alkem Laboratories ltd',21)" style="padding: 1%;text-align:start;">
+        <span style="margin-left: 0.2%;padding:3px;width: 98%;display: flex;justify-content: space-between;">Alkem Laboratories ltd <span style="font-size: larger;color: white;">x</span></span>
+      </a>
+      
+    </div>
+  </div>
+  <div class="centr">
+    <div *ngFor="let i of boxes" class="boxmain">
+      <img src="../assets/medPic.jpg" style="padding:2%;width: 380px;" alt="">
+      <h2>Favipiravir 400mg (Fabiflu) Tablets</h2>
+      <h2 style="color: brown;font-weight: bolder;margin-top: -2%;">Rs 1,775/strip</h2>
+      <h4>Glenmark Pharmaceutical Limited</h4>
+      <h4 style="color: grey;">PARVAT PATIYA ,SURAT, GUJARAT</h4>
+      <div style="background-color: grey;width: 100%;height: 1px;"></div>
+      <div style="display: flex;flex-direction: row;">
+        <img style="padding: 5px;" src="../assets/icn.jpg" alt="">
+        <h2 style="margin-top: 15px;color: rgb(5, 103, 93);">Contact Supplier</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
